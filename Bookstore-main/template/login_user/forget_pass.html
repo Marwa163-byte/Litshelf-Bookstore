@@ -1,0 +1,40 @@
+{% extends "login_user/log_base.html" %}
+{% block body_class %}blur-page{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow" style="width: 400px;">
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="userName" class="form-label">User First Name</label>
+                    <input type="text" class="form-control" id="userName" name="first_name" aria-describedby="nameHelp" placeholder="User Name" required>
+                </div>
+
+                <!-- Email Field -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                </div>
+
+                <!-- Password Field -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                </div>
+
+                <!-- Confirm Password Field -->
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirm_password" placeholder="Confirm Password" required>
+                </div>
+
+                <div>
+                    <a href="{% url 'home' %}" class="btn btn-primary w-100">Submit</a>
+                    <!--<button type="submit" class="btn btn-primary w-100">Sign In</button> -->
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

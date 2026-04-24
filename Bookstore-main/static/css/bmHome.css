@@ -1,0 +1,76 @@
+/*//////////////////contacts////////////////////////////*/
+
+/* Basic styling for the contact page */
+.contact-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.contact-form button {
+    background-color: #198754;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+/*////////////////////////////////////home///////////////////////////////////////////*/
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Flexbox centering for the content */
+.content {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    height: 100vh;           /* Full viewport height */
+    padding: 0;              /* No padding for content container */
+    margin: 0;               /* No margin */
+    text-align: center;      /* Center text */
+    color: black;
+}
+
+/* Inner content wrapper */
+.centered-content {
+    max-width: 600px;  /* Optional: Limits the width of content */
+    margin: 0 auto;    /* Centers horizontally if content is narrower */
+}

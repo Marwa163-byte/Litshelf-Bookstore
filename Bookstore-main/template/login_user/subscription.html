@@ -1,0 +1,39 @@
+{% extends "login_user/log_base.html" %}
+{% block body_class %}blur-page{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="col-md-4">
+       <div class="p-4 border rounded" style="background-color: #fff;">
+           <h1 class="card-title">Subscription</h1>
+            <form method="post" novalidate>
+            {% csrf_token %}
+            <div class="form-group mb-3">
+                <label for="username" class="form-label">Username</label>
+                <!-- Render the form field directly -->
+                {{ form.username }}
+            </div>
+            <div class="form-group mb-3">
+                <label for="email" class="form-label">Email</label>
+                <!-- Render the form field directly -->
+                {{ form.email }}
+            </div>
+            <div class="form-group mb-3">
+                <label for="password" class="form-label">Password</label>
+                <!-- Render the form field directly -->
+                {{ form.password }}
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block w-100">Submit</button>
+            </form>
+                <br>
+                <!-- Payment -->
+                <div class="text-center mt-3">
+                    <a href="{% url 'payment' %}">Proceed to pay</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

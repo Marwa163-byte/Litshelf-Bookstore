@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body_class %}blur-page{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow" style="width: 400px;" id="signup">
+        <h1 class="text-center mb-4">Signup</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+   <button type="submit" href="{% url 'login' %}" class="btn btn-primary w-100" id="button">Submit</button>
+</form>
+    </div>
+</div>
+{% endblock %}

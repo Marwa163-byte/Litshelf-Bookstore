@@ -1,0 +1,18 @@
+{% extends "login_user/log_base.html" %}
+{% block body_class %}blur-page{% endblock %}
+
+{% block content %}
+
+<div class="payment-container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow" style="width: 400px;">
+    <h1 class="payment-title" style="color: #198754;">Payment Successful!</h1>
+        <br>
+    <p class="payment-description">Congratulations! Your payment for <strong>{{ allbooks.book_name }}</strong> was successful.</p>
+    <br>
+    <!-- Button to return to books_details page -->
+    <div class="button-container" style="text-align: center;">
+        <a href="{% url 'log_books_details' allbooks.book_id %}" class="btn btn-primary">Back to Book Details</a>
+    </div>
+    </div>
+</div>
+{% endblock %}

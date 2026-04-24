@@ -1,0 +1,25 @@
+{% extends "login_user/log_base.html" %}
+{% load static %}
+{% block body_class %}blur-page{% endblock %}
+
+{% block content %}
+<div class="book-container">
+    {% for p in all_books %}
+        <div class="card" style="width: 10rem">
+            {% if p.image %}
+                <img src="{{ p.image.url }}" class="card-img-top" alt="Book Image">
+            {% else %}
+                <img src="{% static 'images/default-book.jpg' %}" class="card-img-top" alt="Default Book Image">
+            {% endif %}
+            <div class="card-body">
+                <p class="text-center card-text price-box">TK. {{ p.price }}</p>
+            </div>
+            <div class="text-center">
+                <a class="btn btn-outline-dark mt-auto" href="{% url 'log_books_details' p.book_id %}">Details</a>
+            </div>
+        </div>
+    {% empty %}
+        <p>No books available in this genre.</p>
+    {% endfor %}
+</div>
+{% endblock %}

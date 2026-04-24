@@ -1,0 +1,17 @@
+{% extends "shop_owner/shop_base.html" %}
+{% block body_class %}blur-page{% endblock %}
+
+{% load static %}
+{% block content %}
+<div class="payment-container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow" style="width: 600px;">
+        <h2 class="mb-4">{{ allbooks.book_name }}</h2>
+        <p>Are you sure you want to delete this product?</p>
+        <form method="POST" action="{% url 'delete_books' allbooks.book_id %}">
+            {% csrf_token %}
+            <a href="{% url 'shop_books' %}" class="btn btn-warning">NO</a>
+            <button type="submit" class="submit-btn">Yes</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "subscribed_user/sub_base.html" %}
+{% block body_class %}blur-page{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow" style="width: 400px;">
+        <h1 class="payment-title">Congratulations! </h1>
+        <p class="payment-description">You will receive the book within 3days. Enjoy your time.</p>
+
+
+        <div class="button-container" style="text-align: center;">
+            <a href="{% url 'sub_rent_books_details' allbooks.book_id %}" class="btn btn-primary">Back to Book Details</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

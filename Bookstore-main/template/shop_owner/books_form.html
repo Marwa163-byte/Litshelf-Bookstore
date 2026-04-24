@@ -1,0 +1,27 @@
+{% extends "shop_owner/shop_base.html" %}
+{% block body_class %}blur-page{% endblock %}
+
+{% load static %}
+{% block content %}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow border-0">
+                <div class="card-header bg-success text-white">
+                    <h2 class="h4 mb-0">Add A New Book</h2>
+                </div>
+                <div class="card-body p-4">
+                    <form method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <input type="submit" name="Submit">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

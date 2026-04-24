@@ -1,0 +1,77 @@
+{% extends "shop_owner/shop_base.html" %}
+{% block body_class %}blur-page{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- BOOK DETAILS SECTION -->
+    <h2 class="mb-4">{{ allbooks.book_name }}</h2>
+
+    <div class="row">
+        <!-- Book Image -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                {% if allbooks.image %}
+                    <img src="{{ allbooks.image.url }}" class="card-img-top" alt="{{ allbooks.book_name }}">
+                {% else %}
+                    <img src="{% static 'default-book.jpg' %}" class="card-img-top" alt="Default Book Image">
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Book Information -->
+        <div class="col-md-8">
+            <ul class="list-group mb-4">
+                <li class="list-group-item">
+                    <strong>Price:</strong> TK. {{ allbooks.price }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Author:</strong> {{ allbooks.author_name }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Genre:</strong> {{ allbooks.genre|default:"Not specified" }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Description:</strong> {{ allbooks.description|default:"No description available." }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Availability:</strong>
+                    {% if allbooks.stock_quantity > 0 %}
+                        Available
+                    {% else %}
+                        Out of Stock
+                    {% endif %}
+                </li>
+                <br>
+                <li class="list-group-item">
+                    <strong>Reviews</strong>
+                    <br>
+                    {% if reviews %}
+                        {% for review in reviews %}
+                            <div class="card-header">
+                                <strong>{{ review.user.username }}</strong>
+
+                                <!-- Review Date -->
+                                <span class="text-muted float-end">
+                                    {{ review.created_at|date:"F d, Y" }}
+                                </span>
+                            </div>
+                            <!-- Review Content -->
+                            <div class="card-body">
+                                <p class="card-text">{{ review.comment }}</p>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                </li>
+
+            </ul>
+             <a class="btn btn-outline-dark mt-auto" href="{% url 'update_books' allbooks.book_id %}">Update</a>
+
+           <a class="btn btn-outline-dark mt-auto" href="{% url 'delete_books' allbooks.book_id %}">Delete</a>
+
+    </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "login_user/log_base.html" %}
+{% block body_class %}blur-page{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card p-4 shadow" style="width: 1000px;">
+        <div class="card-body">
+            <h5 class="card-title">User Information</h5>
+            <br>
+            <p class="card-text"><strong>Username:</strong> {{ user.username }}</p>
+            <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+            {% if user.address %}
+            <p class="card-text"><strong>Address:</strong> {{ user.address }}</p>
+            {% else %}
+            <p class="card-text"><strong>Address:</strong> Not provided</p>
+            {% endif %}
+            {% if user.contact_number %}
+            <p class="card-text"><strong>Contact Number:</strong> {{ user.contact_number }}</p>
+            {% else %}
+            <p class="card-text"><strong>Contact Number:</strong> Not provided</p>
+            {% endif %}
+        </div>
+    </div>
+    <a href="{% url 'update_profile' %}" class="btn btn-danger mt-3">Update</a>
+</div>
+{% endblock %}

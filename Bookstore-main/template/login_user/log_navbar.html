@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+  <h5 class="navbar-brand" ><b>LitShelf</b></h5>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'log_profile' %}">Profile</a>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Books
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a href="{% url 'log_book' %}?genre=academic">Academic</a></li>
+              <li><a href="{% url 'log_book' %}?genre=novel">Novels</a></li>
+              <li><a href="{% url 'log_book' %}?genre=fiction">Fiction</a></li>
+              <li><a href="{% url 'log_book' %}?genre=poetry">Poetry</a></li>
+              <li><a href="{% url 'log_book' %}?genre=thriller">Thriller</a></li>
+            </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'log_help' %}">Help</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <button class="btn btn-outline-light me-4" type="submit">Search</button>
+         <a href="{% url 'subscription' %}" class="btn btn-danger me-4">Subscribe</a>
+        <a href="{% url 'home' %}" class="btn btn-light ">Logout</a>
+
+      </form>
+    </div>
+  </div>
+</nav>

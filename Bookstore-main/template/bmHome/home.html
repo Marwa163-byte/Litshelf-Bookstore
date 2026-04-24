@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block body_class %}blur-page{% endblock %}
+{% block content %}
+<div class="content" >
+    <div class="centered-content">
+        <h1 style="font-size: 2.5rem;"><strong>Looking for books?</strong></h1>
+        <p style="font-size: 1.5rem;">Whether you're in the mood to buy or just borrow for a while, we've got you covered.</p>
+        <p style="font-size: 1.5rem;">Subscribe for just 1,500 BDT for 3months and enjoy access to any 12 books of your choice. You'll only pay for delivery!</p>
+        <p style="font-size: 1.5rem;">With our subscription, you can dive into your favorite reads for entire months. So why wait?</p>
+        <h5 style="font-size: 2rem;"><strong>Subscribe today and start your book adventure!</strong></h5>
+        <div class="text-center">
+            <a href="{% url 'login' %}" class="btn btn-danger me-4"
+              >Subscribe</a
+            >
+        </div>
+    </div>
+</div>
+{% endblock %}

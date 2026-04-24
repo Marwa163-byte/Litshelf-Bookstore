@@ -1,0 +1,10 @@
+.book-container {
+    margin-top: 50px;
+    display: flex;
+    gap: 20px; /* Space between cards */
+}
+.book-container .card{
+    width: 300px;
+    height: auto;
+    margin: 10px;
+}

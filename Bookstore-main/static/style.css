@@ -1,0 +1,39 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure both html and body take up full height */
+}
+
+body.landing-page {
+    background-image: url('/static/image/background image2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+}
+
+body.blur-page {
+    background-image: url('/static/image/background image2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: auto;
+}
+
+body.blur-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(5px);
+    z-index: -1;
+}
+

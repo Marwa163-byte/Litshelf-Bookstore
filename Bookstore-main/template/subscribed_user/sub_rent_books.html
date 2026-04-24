@@ -1,0 +1,20 @@
+{% extends "subscribed_user/sub_base.html" %}
+{% block body_class %}blur-page{% endblock %}
+
+{% block content %}
+<div class="book-container">
+
+    {% for p in allbooks %}
+        <div class="card" style="width: 10rem">
+            <img src="{{ p.image.url }}" class="card-img-top" alt="Book Image" />
+            <div class="card-body">
+                <p class="text-center card-text price-box">TK. {{ p.price }}</p>
+            </div>
+            <div class="text-center">
+                <a class="btn btn-outline-dark mt-auto" href="{% url 'sub_rent_books_details' p.book_id %}">Details</a>
+            </div>
+        </div>
+    {% empty %}
+        <p>No books available in this genre.</p>
+    {% endfor %}
+</div>{% endblock %}

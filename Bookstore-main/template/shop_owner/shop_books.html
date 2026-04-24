@@ -1,0 +1,25 @@
+{% extends "shop_owner/shop_base.html" %}
+{% block body_class %}blur-page{% endblock %}
+
+{% block content %}
+<div class="book-container">
+
+    {% for p in all_books %}
+        <div class="card" style="width: 10rem">
+            <img src="{{ p.image.url }}" class="card-img-top" alt="Book Image" />
+            <div class="card-body">
+                <p class="text-center card-text price-box">TK. {{ p.price }}</p>
+            </div>
+            <div class="text-center">
+                <a class="btn btn-outline-dark mt-auto" href="{% url 'shop_book_details' p.book_id %}">Details</a>
+            </div>
+        </div>
+    {% empty %}
+        <p>No books available in this genre.</p>
+    {% endfor %}
+    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+             <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'upload_books'%}">Add Books</a></div>
+    </div>
+
+</div>
+{% endblock %}

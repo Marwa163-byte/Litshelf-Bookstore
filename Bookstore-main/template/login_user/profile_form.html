@@ -1,0 +1,17 @@
+{% extends "login_user/log_base.html" %}
+{% block body_class %}blur-page{% endblock %}
+
+{% block content %}
+<div class="payment-container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow" style="width: 500px;">
+        <h1 class="payment-title" style="color: #dc3545;">Update Your Profile</h1><br>
+<form method = "POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" name="Submit">
+</form>
+    </div>
+</div>
+
+
+{% endblock %}

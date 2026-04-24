@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+      <h5 class="navbar-brand" ><b>LitShelf</b></h5>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Profile Link -->
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'sub_profile' %}">Profile</a>
+        </li>
+
+       <!-- Main Dropdown for Books -->
+  <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Books
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a href="{% url 'sub_books' %}">Buy Books</a></li>
+              <li><a href="{% url 'sub_rent_books' %}?">Rent Books</a></li>
+            </ul>
+  </li>
+
+        <!-- Help Link -->
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'sub_help' %}">Help</a>
+        </li>
+      </ul>
+
+      <!-- Search and Logout -->
+      <form class="d-flex">
+        <button class="btn btn-outline-light me-4" type="submit">Search</button>
+        <a class="btn btn-danger me-4">Subscribed</a>
+        <a href="{% url 'home' %}" class="btn btn-light">Logout</a>
+      </form>
+    </div>
+  </div>
+</nav>
